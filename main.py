@@ -34,17 +34,15 @@ transcription = client.audio.transcriptions.create(
     file=audio_file,
     response_format="text"
 )
-st.write(f"👤 - {transcription}")
-st.write(f"🤖 - Your website is cooking 🔥🔥🔥")
+st.markdown(
+    f"<h4 style='background-color: #0d0d0d; color: white; margin-top: 20vh; border-bottom: 1px solid #808080; padding: 2.5rem 2.5rem; opacity: 0.7; border-radius: 16px; margin-bottom:5vh; '>👤 - {transcription}</h4>", unsafe_allow_html=True)
+st.markdown("<h4 style='background-color: #0d0d0d; color: white; border-bottom: 1px solid #808080; padding: 2.5rem 2.5rem; opacity: 0.7; border-radius: 16px; margin-bottom:5vh; '>🤖 - Your website is cooking 🔥🔥🔥</h4>",
+            unsafe_allow_html=True)
+
 # The INCREDIENTSSSS
-output_func(transcription)
+# output_func(transcription)
 
-st.write(
-    f"🤖 - yupp 😋 done: go visit it here 👉 [link](http://127.0.0.1:5500/saturday-hack-night-template/output.html)")
-
-
-# chreatign a hello messaq for the user by the assistant
-
+st.markdown("<h4 style='background-color: #0d0d0d; color: white; border-bottom: 1px solid #808080; padding: 2.5rem 2.5rem; opacity: 0.7; border-radius: 16px; margin-bottom:5vh; '>🤖 - yupp 😋 done: go visit it here 👉 <a href='http://127.0.0.1:5500/saturday-hack-night-template/output.html' style='color: #4CAF50;'>link</a></h4>", unsafe_allow_html=True)
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
