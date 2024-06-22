@@ -1,13 +1,19 @@
 
+import os
 from langchain_openai import ChatOpenAI
 # from langchain.chat_models import ChatOpenAI
 from openai import OpenAI as OAI
-from s import openaikey
+# from s import openaikey
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain, SequentialChain
 
-import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+openaikey = os.getenv("OPENAI_API_KEY")
 os.environ['OPENAI_API_KEY'] = openaikey
+
 
 client = OAI(api_key=openaikey)
 
@@ -130,7 +136,7 @@ def generate_js_sections(prompt, html_code):
 
 html_code = generate_html_sections(prompt)
 
-# print("\n\n\n", html_code)
+print("\n\n\n", html_code)
 css_code = generate_css_sections(prompt, html_code)
 
 # print("\n\n\n", css_code)
