@@ -14,6 +14,10 @@ client = OAI(api_key=openaikey)
 
 st.title("Speak To Site 🗣️🗣️🗣️")
 
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
+
 with st.sidebar:
 
     st.markdown("# Speak Your Imagination 🌟", unsafe_allow_html=True)
@@ -24,24 +28,20 @@ with st.sidebar:
         audio_file = "a.mp3"
         with open(audio_file, "wb") as f:
             f.write(recorded_audio)
-        audio_file = open("a.mp3", "rb")
-        transcription = client.audio.transcriptions.create(
-            model="whisper-1",
-            file=audio_file,
-            response_format="text"
-        )
-        st.session_state.messages.append(
-            {"role": "user", "content": transcription})
-        st.session_state.messages.append(
-            {"role": "assistant", "content": "Your website is cooking 🔥🔥🔥"})
-        # The INCREDIENTSSSS
-        output_func(transcription)
-        st.session_state.messages.append(
-            {"role": "assistant", "content": "yupp 😋 done: go visit it here 👉 [link](http://127.0.0.1:5500/saturday-hack-night-template/output.html)"})
+audio_file = open("a.mp3", "rb")
+transcription = client.audio.transcriptions.create(
+    model="whisper-1",
+    file=audio_file,
+    response_format="text"
+)
+st.write(f"👤 - {transcription}")
+st.write(f"🤖 - Your website is cooking 🔥🔥🔥")
+# The INCREDIENTSSSS
+output_func(transcription)
 
+st.write(
+    f"🤖 - yupp 😋 done: go visit it here 👉 [link](http://127.0.0.1:5500/saturday-hack-night-template/output.html)")
 
-if "messages" not in st.session_state:
-    st.session_state.messages = []
 
 # chreatign a hello messaq for the user by the assistant
 

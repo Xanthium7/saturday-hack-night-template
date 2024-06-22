@@ -19,7 +19,7 @@ os.environ['OPENAI_API_KEY'] = openaikey
 
 
 # llm = OpenAI(model_name="gpt-4o", temperature=0.6)
-llm = ChatOpenAI(model_name='gpt-4')
+llm = ChatOpenAI()
 
 
 # print("\n\n\n", prompt)

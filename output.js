@@ -1,18 +1,26 @@
-window.onload = function () {
-  var navMenu = document.getElementById("nav-menu");
-  var navItems = navMenu.getElementsByTagName("li");
-  for (var i = 0; i < navItems.length; i++) {
-    navItems[i].addEventListener("mouseenter", function (event) {
-      var subMenu = this.getElementsByTagName("ul")[0];
-      if (subMenu) {
-        subMenu.style.display = "block";
-      }
+Here's a simple JavaScript code which will animate the scroll to respective sections when navbar links are clicked:
+
+```javascript
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
     });
-    navItems[i].addEventListener("mouseleave", function (event) {
-      var subMenu = this.getElementsByTagName("ul")[0];
-      if (subMenu) {
-        subMenu.style.display = "none";
-      }
+});
+
+let projectElements = document.querySelectorAll('.project');
+
+projectElements.forEach(project => {
+    project.addEventListener('mouseover', function() {
+        this.querySelector('.project-description').style.visibility = 'visible';
     });
-  }
-};
+
+    project.addEventListener('mouseout', function() {
+        this.querySelector('.project-description').style.visibility = 'hidden';
+    });
+});
+```
+
+This code includes smooth scrolling for links and showing project descriptions on hover.
