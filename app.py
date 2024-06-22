@@ -33,7 +33,7 @@ llm = ChatOpenAI(model_name='gpt-4')
 
 p_template_name = PromptTemplate(
     input_variables=['transcription'],
-    template="You are a prompt generating bot that will take an instruction about a website and u will need to describe that website clealrly. You should describe the need of any stylings, animations or images that may be required.It should have a default font of Arial, unless specified differently. (You will be giving these instructions to a coding bot that will genrate the html css and js code). Keep the instructions less than 150 words. your given the instruction :{transcription}."
+    template="You are a prompt generating bot that will take an instruction about a website and u will need to describe that website clealrly with a proper color pallete and theme. You should describe the need of any stylings, animations or images that may be required.It should have a default font of Arial, unless specified differently. (You will be giving these instructions to a coding bot that will genrate the html css and js code). Keep the instructions less than 200 words. your given the instruction :{transcription}."
 
 )
 p_template_name.format(
@@ -49,28 +49,18 @@ print("\n\n\n", prompt)
 
 
 def generate_html_sections(prompt):
-    sections = ['navbar', 'main-content', 'footer']
-    complete_html = """<!DOCTYPE html>\n<link rel="stylesheet" href="output.css">\n<script src="output.js"></script>\n<html>\n"""
-    for section in sections:
-        # Concise prompt for each section
-        section_prompt = f"Generate the {section} of an HTML page based on: {prompt}. Make sure to give the code ONLY for the {section} and nothing more. Include necessary classes and ids for each element. Exclude the css code and javascript code. Give back the html code as plain text (make sure the response does not contain '```' tag). (if at any point,any images are needed to be added then use 'https://placehold.co/600x400' as the image source)"
-        p_template_html_section = PromptTemplate(
-            input_variables=['transcription'],
-            template=section_prompt
-        )
-        code_html_chain_section = LLMChain(
-            llm=llm, prompt=p_template_html_section, output_key="html_code_section")
-        result_section = code_html_chain_section(
-            {"transcription": transcription})
-        html_section = result_section["html_code_section"]
-        # Add the generated section to the complete HTML
-        if section == 'header':
-            complete_html += "<head>\n" + html_section + "\n</head>\n<body>\n"
-        elif section == 'footer':
-            complete_html += html_section + "\n</body>\n</html>"
-        else:
-            complete_html += html_section + "\n"
-    return complete_html
+
+    section_prompt = f"Generate the  HTML code for a page based on: {prompt}. Include necessary classes and ids for each element. The html should include link section linking 'output.css' in same folder and script linking 'output.js' in same folder.  Exclude the css code and javascript code. Give back the html code as plain text (make sure the response does not contain '```' tag). (if at any point,any images are needed to be added then use 'https://placehold.co/600x400' as the image source)"
+    p_template_html_section = PromptTemplate(
+        input_variables=['transcription'],
+        template=section_prompt
+    )
+    code_html_chain_section = LLMChain(
+        llm=llm, prompt=p_template_html_section, output_key="html_code_section")
+    result_section = code_html_chain_section(
+        {"transcription": transcription})
+    html_section = result_section["html_code_section"]
+    return html_section
 
 
 def sanitize_for_format(string):
@@ -79,59 +69,53 @@ def sanitize_for_format(string):
 
 
 def generate_css_sections(prompt, html_code):
-    sections = ['navbar', 'main-content', 'footing']
-    complete_css = ""
-    for section in sections:
-        # Sanitize prompt and html_code to escape curly braces
-        sanitized_prompt = sanitize_for_format(prompt)
-        sanitized_html_code = sanitize_for_format(html_code)
 
-        section_prompt = f"Create the {section} CSS code stylings based on the website description: {sanitized_prompt} and the HTML code: {sanitized_html_code}. Give only the css code as plain text (make sure the response does not contain '```' tag). use proper classes or ids as used in the html code"
+    sanitized_prompt = sanitize_for_format(prompt)
+    sanitized_html_code = sanitize_for_format(html_code)
 
-        # Debugging: Print the section prompt to ensure it's formatted correctly
-        # print(f"Section Prompt: {section_prompt}")
+    section_prompt = f"Create the CSS code stylings based on the website description: {sanitized_prompt} and the HTML code: {sanitized_html_code}. Give only the css code as plain text (make sure the response does not contain '```' tag). use proper classes or ids as used in the html code"
 
-        p_template_css_section = PromptTemplate(
-            input_variables=['prompt', 'html_code'],
-            template=section_prompt
-        )
+    # Debugging: Print the section prompt to ensure it's formatted correctly
+    # print(f"Section Prompt: {section_prompt}")
 
-        # Prepare the input dictionary with original (unsanitized) values
-        input_dict = {"prompt": prompt, "html_code": html_code}
+    p_template_css_section = PromptTemplate(
+        input_variables=['prompt', 'html_code'],
+        template=section_prompt
+    )
 
-        # Debugging: Print the input dictionary to ensure it's correct
-        # print(f"Input Dictionary: {input_dict}")
+    # Prepare the input dictionary with original (unsanitized) values
+    input_dict = {"prompt": prompt, "html_code": html_code}
 
-        code_css_chain_section = LLMChain(
-            llm=llm, prompt=p_template_css_section, output_key="css_code_section"
-        )
+    # Debugging: Print the input dictionary to ensure it's correct
+    # print(f"Input Dictionary: {input_dict}")
 
-        result_section = code_css_chain_section(input_dict)
-        css_section = result_section["css_code_section"]
-        complete_css += css_section + "\n"
+    code_css_chain_section = LLMChain(
+        llm=llm, prompt=p_template_css_section, output_key="css_code_section"
+    )
 
-    return complete_css
+    result_section = code_css_chain_section(input_dict)
+    css_section = result_section["css_code_section"]
+
+    return css_section
 
 
 def generate_js_sections(prompt, html_code):
-    sections = ['dynamic-content-loadings']
-    complete_js = ""
-    for section in sections:
-        sanitized_prompt = sanitize_for_format(prompt)
-        sanitized_html_code = sanitize_for_format(html_code)
-        # Modify the prompt to request a specific section of the JavaScript
-        section_prompt = f"Create the {section} using JavaScript code based on the website description: {sanitized_prompt}, the HTML code: {sanitized_html_code} Give only the javascript code as plain text (make sure the response does not contain '```' tag) and nothing else"
-        p_template_js_section = PromptTemplate(
-            input_variables=['prompt', 'html_code'],
-            template=section_prompt
-        )
-        code_js_chain_section = LLMChain(
-            llm=llm, prompt=p_template_js_section, output_key="js_code_section")
-        result_section = code_js_chain_section(
-            {"prompt": prompt, "html_code": html_code})
-        js_section = result_section["js_code_section"]
-        complete_js += js_section + "\n"
-    return complete_js
+
+    sanitized_prompt = sanitize_for_format(prompt)
+    sanitized_html_code = sanitize_for_format(html_code)
+    # Modify the prompt to request a specific section of the JavaScript
+    section_prompt = f"Create the JavaScript code based on the website description: {sanitized_prompt}, the HTML code: {sanitized_html_code}. Give only the javascript code as plain text (make sure the response does not contain '```' tag) and nothing else"
+    p_template_js_section = PromptTemplate(
+        input_variables=['prompt', 'html_code'],
+        template=section_prompt
+    )
+    code_js_chain_section = LLMChain(
+        llm=llm, prompt=p_template_js_section, output_key="js_code_section")
+    result_section = code_js_chain_section(
+        {"prompt": prompt, "html_code": html_code})
+    js_section = result_section["js_code_section"]
+
+    return js_section
 
 
 html_code = generate_html_sections(prompt)

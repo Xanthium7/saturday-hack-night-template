@@ -1,98 +1,37 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="output.css">
-<script src="output.js"></script>
-<html>
-Here is your HTML code for the navbar:
-
-```html
-<!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="output.css">
 </head>
-<body>
-  <header>
-    <nav id="navbar" class="sticky-nav">
-      <div class="logo">
-        <a href="#"><img src="https://placehold.co/600x400" alt="Logo"></a>
-      </div>
-      <ul id="nav-menu">
-        <li><a href="#starters">Starters</a></li>
-        <li><a href="#main-course">Main Course</a></li>
-        <li><a href="#desserts">Desserts</a></li>
-      </ul>
-    </nav>
-  </header>
-</body>
-</html>
-```
-
-Make sure to replace the "#" in the href attributes with the actual link to your sections in the page. The logo image is also a placeholder; you can replace the source with your actual logo when you have it.
-<div class="container">
-    <nav id="navbar">
+<body style="background-color: #333333; color: #FFFFFF; font-family: Arial">
+    <nav id="navbar" style="position: fixed; top: 0">
         <ul>
-            <li><a href="#starters">Starters</a></li>
-            <li><a href="#main">Main Course</a></li>
-            <li><a href="#desserts">Desserts</a></li>
+            <li><a href="#starters" style="color: #FF0000">Starters</a></li>
+            <li><a href="#main_course" style="color: #FF0000">Main Course</a></li>
+            <li><a href="#desserts" style="color: #FF0000">Desserts</a></li>
         </ul>
     </nav>
-
     <section id="starters">
-        <h2>Starters</h2>
-        <div class="food-item">
-            <img src="https://placehold.co/600x400" alt="food image">
-            <h3>Food Name</h3>
-            <p>Brief description about the food item.</p>
-            <span>$Price</span>
+        <div class="food-listing">
+            <img src="https://placehold.co/600x400" alt="food image" class="food-image">
+            <p class="food-description">This is a brief description of the food item.</p>
+            <button style="background-color: #FF0000" class="order-now">Order Now</button>
         </div>
-        <!--Add more food items as needed-->
     </section>
-
-    <section id="main">
-        <h2>Main Course</h2>
-        <div class="food-item">
-            <img src="https://placehold.co/600x400" alt="food image">
-            <h3>Food Name</h3>
-            <p>Brief description about the food item.</p>
-            <span>$Price</span>
+    <section id="main_course">
+        <div class="food-listing">
+            <img src="https://placehold.co/600x400" alt="food image" class="food-image">
+            <p class="food-description">This is a brief description of the food item.</p>
+            <button style="background-color: #FF0000" class="order-now">Order Now</button>
         </div>
-        <!--Add more food items as needed-->
     </section>
-
     <section id="desserts">
-        <h2>Desserts</h2>
-        <div class="food-item">
-            <img src="https://placehold.co/600x400" alt="food image">
-            <h3>Food Name</h3>
-            <p>Brief description about the food item.</p>
-            <span>$Price</span>
+        <div class="food-listing">
+            <img src="https://placehold.co/600x400" alt="food image" class="food-image">
+            <p class="food-description">This is a brief description of the food item.</p>
+            <button style="background-color: #FF0000" class="order-now">Order Now</button>
         </div>
-        <!--Add more food items as needed-->
     </section>
-</div>
-<div id="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <h3>Our Restaurant</h3>
-                <p>123 Food Street, Yummy Town, 78910</p>
-                <p>Phone: (123) 456-7890</p>
-                <p>Email: info@ourrestaurant.com</p>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <h3>Opening Hours</h3>
-                <p>Mon-Fri: 12:00pm - 10:00pm</p>
-                <p>Sat-Sun: 11:00am - 11:00pm</p>
-            </div>
-            <div class="col-lg-4 col-md-12">
-                <h3>Follow Us</h3>
-                <ul class="social-media">
-                    <li><a href="#"><img src="https://placehold.co/600x400" alt="Facebook"></a></li>
-                    <li><a href="#"><img src="https://placehold.co/600x400" alt="Twitter"></a></li>
-                    <li><a href="#"><img src="https://placehold.co/600x400" alt="Instagram"></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+    <script src="output.js"></script>
 </body>
 </html>
