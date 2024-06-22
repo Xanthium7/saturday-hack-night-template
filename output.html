@@ -1,37 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>My Personal Blog</title>
     <link rel="stylesheet" type="text/css" href="output.css">
 </head>
-<body style="background-color: #333333; color: #FFFFFF; font-family: Arial">
-    <nav id="navbar" style="position: fixed; top: 0">
-        <ul>
-            <li><a href="#starters" style="color: #FF0000">Starters</a></li>
-            <li><a href="#main_course" style="color: #FF0000">Main Course</a></li>
-            <li><a href="#desserts" style="color: #FF0000">Desserts</a></li>
+<body>
+    <header id="main-header" style="background-color:#006400; color:#F5F5DC;">
+        <h1 style="font-family:Arial; font-size:2em;">Welcome to My Blog</h1>
+    </header>
+    <nav id="navbar">
+        <ul id="nav-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Me</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
     </nav>
-    <section id="starters">
-        <div class="food-listing">
-            <img src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="food image" class="food-image">
-            <p class="food-description">This is a brief description of the food item.</p>
-            <button style="background-color: #FF0000" class="order-now">Order Now</button>
-        </div>
-    </section>
-    <section id="main_course">
-        <div class="food-listing">
-            <img src="https://images.pexels.com/photos/941869/pexels-photo-941869.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="food image" class="food-image">
-            <p class="food-description">This is a brief description of the food item.</p>
-            <button style="background-color: #FF0000" class="order-now">Order Now</button>
-        </div>
-    </section>
-    <section id="desserts">
-        <div class="food-listing">
-            <img src="https://images.pexels.com/photos/5638333/pexels-photo-5638333.jpeg?auto=compress&cs=tinysrgb&w=600" alt="food image" class="food-image">
-            <p class="food-description">This is a brief description of the food item.</p>
-            <button style="background-color: #FF0000" class="order-now">Order Now</button>
-        </div>
-    </section>
+    <main id="content" style="background-color:#F5F5DC; color:#006400;">
+        <section id="welcome-section">
+            <h2 style="font-family:Arial; font-size:1.5em;">Welcome Message</h2>
+            <p>Welcome to my personal blog. Here you can read my thoughts and experiences.</p>
+        </section>
+        <section id="recent-posts">
+            <h2 style="font-family:Arial; font-size:1.5em;">Recent Posts</h2>
+            <article class="post">
+                <h3 style="font-family:Arial; font-size:1.2em;">Post Title</h3>
+                <p>Post content...</p>
+            </article>
+            <article class="post">
+                <h3 style="font-family:Arial; font-size:1.2em;">Post Title</h3>
+                <p>Post content...</p>
+            </article>
+        </section>
+        <aside id="sidebar">
+            <h2 style="font-family:Arial; font-size:1.5em;">Categories</h2>
+            <ul>
+                <li><a href="#">Category 1</a></li>
+                <li><a href="#">Category 2</a></li>
+                <li><a href="#">Category 3</a></li>
+            </ul>
+        </aside>
+    </main>
+    <footer style="background-color:#006400; color:#F5F5DC;">
+        <ul id="social-links">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+        </ul>
+    </footer>
     <script src="output.js"></script>
 </body>
 </html>

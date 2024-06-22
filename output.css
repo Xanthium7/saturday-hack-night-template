@@ -1,75 +1,82 @@
 body {
-    background-color: #333333;
-    color: #FFFFFF;
+    background-color: #F5F5DC;
+    color: #006400;
     font-family: Arial;
 }
 
+#main-header {
+    background-color: #006400;
+    color: #F5F5DC;
+    padding: 20px 0;
+    text-align: center;
+}
+
+#main-header h1 {
+    font-size: 2em;
+}
+
 #navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
+    background-color: #006400;
+    color: #F5F5DC;
+    padding: 10px 0;
 }
 
-#navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333333;
-}
-
-#navbar li {
-    float: left;
-}
-
-#navbar li a {
-    display: block;
-    color: #FF0000;
-    text-align: center;
-    padding: 14px 16px;
+#navbar a {
+    color: #F5F5DC;
     text-decoration: none;
+    margin: 0 15px;
 }
 
-#navbar li a:hover {
-    background-color: #111111;
+#navbar a:hover {
+    color: #F5F5DC;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
 }
 
-.food-listing {
-    margin: 50px;
+#content h2, #content h3 {
+    font-size: 1.5em;
+}
+
+.post h3 {
+    font-size: 1.2em;
+}
+
+#sidebar {
+    float: right;
+    width: 25%;
     padding: 20px;
-    transition: transform .2s;
 }
 
-.food-listing:hover {
-    transform: scale(1.1);
+#sidebar ul {
+    list-style: none;
+    padding: 0;
 }
 
-.food-image {
-    width: 100%;
-    height: auto;
+#sidebar ul a {
+    color: #006400;
 }
 
-.food-description {
-    margin: 10px 0;
+#sidebar ul a:hover {
+    color: #006400;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
 }
 
-.order-now {
-    background-color: #FF0000;
-    border: none;
-    color: white;
-    padding: 15px 32px;
+footer {
+    background-color: #006400;
+    color: #F5F5DC;
     text-align: center;
+    padding: 20px 0;
+}
+
+footer a {
+    color: #F5F5DC;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+    margin: 0 10px;
 }
 
-.order-now:hover {
-    background-color: #FF4500;
-}
-
-html {
-    scroll-behavior: smooth;
+footer a:hover {
+    color: #F5F5DC;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
 }

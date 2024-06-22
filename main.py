@@ -3,6 +3,7 @@ import os
 from audio_recorder_streamlit import audio_recorder
 from openai import OpenAI as OAI
 from dotenv import load_dotenv
+from langchain_helper import output_func
 
 load_dotenv()
 
@@ -31,6 +32,10 @@ with st.sidebar:
         )
         st.session_state.messages.append(
             {"role": "user", "content": transcription})
+        st.session_state.messages.append(
+            {"role": "assistant", "content": "Your website is cooking 🔥🔥🔥"})
+        # The INCREDIENTSSSS
+        output_func(transcription)
         st.session_state.messages.append(
             {"role": "assistant", "content": "yupp 😋 done: go visit it here 👉 [link](http://127.0.0.1:5500/saturday-hack-night-template/output.html)"})
 

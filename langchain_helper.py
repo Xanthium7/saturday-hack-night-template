@@ -122,9 +122,9 @@ def output_func(transcription):
     # print("\n\n\n", js_code)
 
     # Save the generated code to files
-    with open('output.html', 'w') as f:
+    with open('output.html', 'w', encoding='utf-8') as f:
         f.write(html_code)
-    with open('output.css', 'w') as f:
+    with open('output.css', 'w', encoding='utf-8') as f:
         f.write(css_code)
-    with open('output.js', 'w') as f:
+    with open('output.js', 'w', encoding='utf-8') as f:
         f.write(js_code)

@@ -1,47 +1,18 @@
-// Initialize all sections
-const sections = document.querySelectorAll("section");
-
-// Add an event listener for the 'click' event on each section
-sections.forEach((section) => {
-  section.addEventListener("click", (event) => {
-    // Check if the clicked element is a button
-    if (event.target.nodeName === "BUTTON") {
-      // Execute your order function here
-      orderFood(event.target.parentNode);
-    }
-  });
-});
-
-// Add a hover effect to each food listing
-const foodListings = document.querySelectorAll(".food-listing");
-
-foodListings.forEach((listing) => {
-  listing.addEventListener("mouseover", (event) => {
-    event.target.style.transform = "scale(1.05)";
-    event.target.style.transition = "transform 0.3s";
-  });
-
-  listing.addEventListener("mouseout", (event) => {
-    event.target.style.transform = "none";
-  });
-});
-
-// Function to smoothly scroll to a section when its corresponding nav link is clicked
-document.querySelector("#navbar").addEventListener("click", function (event) {
-  event.preventDefault();
-  if (event.target.nodeName === "A") {
-    document.querySelector(event.target.getAttribute("href")).scrollIntoView({
-      behavior: "smooth",
+window.onload = function () {
+  var navMenu = document.getElementById("nav-menu");
+  var navItems = navMenu.getElementsByTagName("li");
+  for (var i = 0; i < navItems.length; i++) {
+    navItems[i].addEventListener("mouseenter", function (event) {
+      var subMenu = this.getElementsByTagName("ul")[0];
+      if (subMenu) {
+        subMenu.style.display = "block";
+      }
+    });
+    navItems[i].addEventListener("mouseleave", function (event) {
+      var subMenu = this.getElementsByTagName("ul")[0];
+      if (subMenu) {
+        subMenu.style.display = "none";
+      }
     });
   }
-});
-
-// Function to process food order
-function orderFood(foodListing) {
-  // Extract the food description from the listing
-  const foodDescription =
-    foodListing.querySelector(".food-description").innerText;
-
-  // Place order...
-  console.log(`Order received for ${foodDescription}`);
-}
+};
