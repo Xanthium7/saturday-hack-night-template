@@ -1,0 +1,176 @@
+Sure! The navigation bar is already red in the provided code. However, I can ensure that the color properties are clearly defined and make any necessary adjustments to emphasize the red color for the navigation bar.
+
+Here is the updated code:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Website</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+            color: #000000;
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #FF0000; /* Red color */
+            color: #FFFFFF;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .nav-item {
+            padding: 15px;
+        }
+
+        .nav-link {
+            color: #FFFFFF;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #000000;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding-top: 60px; /* To compensate for fixed navbar */
+            background-color: #FFFFFF;
+            text-align: center;
+        }
+
+        .section {
+            padding: 50px 20px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .section-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #000000;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .footer-text {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-list {
+                flex-direction: column;
+            }
+
+            .nav-item {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="navbar">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+            <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+        <section id="home" class="section">
+            <h1 class="section-title">Welcome to Our Website</h1>
+            <p class="section-description">Discover our services and offerings.</p>
+            <img src="https://placehold.co/600x400" alt="Placeholder Image" class="section-image">
+        </section>
+
+        <section id="about" class="section">
+            <h2 class="section-title">About Us</h2>
+            <p class="section-description">We are a company dedicated to providing top-notch services.</p>
+            <img src="https://placehold.co/600x400" alt="Placeholder Image" class="section-image">
+        </section>
+
+        <section id="services" class="section">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-description">Explore the wide range of services we offer.</p>
+            <img src="https://placehold.co/600x400" alt="Placeholder Image" class="section-image">
+        </section>
+
+        <section id="contact" class="section">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-description">Get in touch with us for more information.</p>
+            <img src="https://placehold.co/600x400" alt="Placeholder Image" class="section-image">
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <p class="footer-text">© 2023 Modern Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth scrolling for internal links
+            const links = document.querySelectorAll('a[href^="#"]');
+            for (const link of links) {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            }
+
+            // Hover effect for navigation links
+            const navLinks = document.querySelectorAll('.nav-link');
+            for (const navLink of navLinks) {
+                navLink.addEventListener('mouseenter', function () {
+                    this.style.color = '#000000';
+                });
+                navLink.addEventListener('mouseleave', function () {
+                    this.style.color = '#FFFFFF';
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

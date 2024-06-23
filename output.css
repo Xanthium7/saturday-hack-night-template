@@ -1,17 +1,21 @@
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
-    color: #333;
     margin: 0;
     padding: 0;
+    background-color: #FFFFFF;
+    color: #000000;
+    scroll-behavior: smooth;
 }
 
-#navbar {
-    position: sticky;
+/* Navigation Bar */
+.navbar {
+    background-color: #FF0000;
+    color: #FFFFFF;
+    position: fixed;
     top: 0;
-    background-color: #333;
-    color: #fff;
-    padding: 1em;
-    transition: all 0.3s ease;
+    width: 100%;
+    z-index: 1000;
 }
 
 .nav-list {
@@ -22,89 +26,65 @@ body {
     justify-content: space-around;
 }
 
-.nav-list a {
-    color: #fff;
+.nav-item {
+    padding: 15px;
+}
+
+.nav-link {
+    color: #FFFFFF;
     text-decoration: none;
 }
 
-.hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-size: cover;
-    background-position: center;
-    color: #fff;
+.nav-link:hover {
+    color: #000000;
 }
 
-.hero-title {
-    font-size: 3em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+/* Main Content */
+.main-content {
+    padding-top: 60px; /* To compensate for fixed navbar */
+    background-color: #FFFFFF;
+    text-align: center;
 }
 
 .section {
-    padding: 2em;
+    padding: 50px 20px;
 }
 
 .section-title {
     font-size: 2em;
-    margin-bottom: 1em;
-    font-weight: bold;
+    margin-bottom: 20px;
 }
 
-.projects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 1em;
+.section-description {
+    font-size: 1.2em;
+    margin-bottom: 20px;
 }
 
-.project {
-    position: relative;
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.project-description {
-    display: none;
-    text-align: center;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 1em;
+.section-image {
     width: 100%;
+    max-width: 600px;
+    height: auto;
 }
 
-.project:hover .project-description {
-    display: flex;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    margin-bottom: 1em;
-    padding: 0.5em;
-}
-
-.contact-form button {
-    padding: 0.5em 1em;
-}
-
-footer {
-    padding: 1em;
-    background-color: #333;
-    color: #fff;
+/* Footer */
+.footer {
+    background-color: #000000;
+    color: #FFFFFF;
     text-align: center;
+    padding: 20px;
 }
 
-@media (max-width: 600px) {
-    .hero-title {
-        font-size: 2em;
+.footer-text {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
     }
 
-    .section-title {
-        font-size: 1.5em;
+    .nav-item {
+        text-align: center;
     }
 }

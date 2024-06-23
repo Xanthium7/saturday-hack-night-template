@@ -7,6 +7,8 @@ from openai import OpenAI as OAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain, SequentialChain
 from dotenv import load_dotenv
+from langchain.chains import ConversationChain
+from langchain.memory import ConversationBufferWindowMemory
 
 load_dotenv()
 
@@ -19,7 +21,10 @@ os.environ['OPENAI_API_KEY'] = openaikey
 
 
 # llm = OpenAI(model_name="gpt-4o", temperature=0.6)
-llm = ChatOpenAI()
+llm = ChatOpenAI(model="gpt-4o")
+memory = ConversationBufferWindowMemory(k=3)
+# # Initialize the ConversationChain with the corrected parameters
+convo = ConversationChain(llm=llm, memory=memory, verbose=True)
 
 
 # print("\n\n\n", prompt)
@@ -122,9 +127,37 @@ def output_func(transcription):
     # print("\n\n\n", js_code)
 
     # Save the generated code to files
+    def final_code_strip_sanitizer(string):
+        # Double curly braces to escape them in format strings
+        return string.replace("{", "{{").replace("}", "}}")
+
     with open('output.html', 'w', encoding='utf-8') as f:
         f.write(html_code)
     with open('output.css', 'w', encoding='utf-8') as f:
         f.write(css_code)
     with open('output.js', 'w', encoding='utf-8') as f:
         f.write(js_code)
+
+    html_code = sanitize_for_format(html_code)
+    css_code = sanitize_for_format(css_code)
+    js_code = sanitize_for_format(js_code)
+
+    template = f"you are a code combiner who combines separate html, css, and javascript code into a single html code as well as make it much more professional and appealing. The html code must contain a style tag within which the css code should go and must also contain a script tag within which the javascript code should go. You have been provided with the following code snippets: html: {html_code} css: {css_code} js: {js_code}. You must fix the errors if any, make professional modifications based on the prompt: {prompt}. Combine the code snippets into a single html code(which has both styles and script tag). Make sure the css code is within the style tag and the js code is within the script tag. Give the combined code as plain text (make sure the response does not contain ' ``` ' tag). MAke sure u generate atleast 600 lines of code"
+    combined_code = convo.predict(input=template)
+
+    with open('combined_code.html', 'w', encoding='utf-8') as f:
+        f.write(combined_code)
+
+    # print(combined_code)
+
+
+def chain_code_func(text):
+    if text is None:
+        # Handle the case where text is None, e.g., set it to a default value or return early
+        print("Error: Input text is None.")
+        return
+    combined_code = convo.predict(input=text)
+
+    with open('combined_code.html', 'w', encoding='utf-8') as f:
+        f.write(combined_code)
+    print(convo.memory.buffer)

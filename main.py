@@ -4,6 +4,7 @@ from audio_recorder_streamlit import audio_recorder
 from openai import OpenAI as OAI
 from dotenv import load_dotenv
 from langchain_helper import output_func
+from langchain_helper import chain_code_func
 
 load_dotenv()
 
@@ -40,9 +41,27 @@ st.markdown("<h4 style='background-color: #0d0d0d; color: white; border-bottom: 
             unsafe_allow_html=True)
 
 # The INCREDIENTSSSS
-# output_func(transcription)
+output_func(transcription)
 
-st.markdown("<h4 style='background-color: #0d0d0d; color: white; border-bottom: 1px solid #808080; padding: 2.5rem 2.5rem; opacity: 0.7; border-radius: 16px; margin-bottom:5vh; '>🤖 - yupp 😋 done: go visit it here 👉 <a href='http://127.0.0.1:5500/saturday-hack-night-template/output.html' style='color: #4CAF50;'>link</a></h4>", unsafe_allow_html=True)
+st.markdown("<h4 style='background-color: #0d0d0d; color: white; border-bottom: 1px solid #808080; padding: 2.5rem 2.5rem; opacity: 0.7; border-radius: 16px; margin-bottom:5vh; '>🤖 - yupp 😋 done: go visit it here 👉 <a href='http://127.0.0.1:5500/saturday-hack-night-template/combined_code.html' style='color: #4CAF50;'>link</a></h4>", unsafe_allow_html=True)
+
+
+message = transcription
+
+if "exit" not in message:
+    chain_code_func(message)
+
+
+else:
+    st.markdown("<h4 style='background-color: #0d0d0d; color: white; border-bottom: 1px solid #808080; padding: 2.5rem 2.5rem; opacity: 0.7; border-radius: 16px; margin-bottom:5vh; '>🤖 - YAYYY EXITEDD ❕❕❕</h4>",
+                unsafe_allow_html=True)
+
+    # output_func(message)
+
+# st.session_state.messages.append(
+#             {"role": "assistant", "content": "yupp 😋 done: go visit it here 👉 [link](http://127.0.0.1:5500/saturday-hack-night-template/combined_code.html)"})
+
+
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
