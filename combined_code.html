@@ -1,0 +1,259 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #FFC371;
+            color: #455A64;
+            padding: 20px;
+            text-align: center;
+        }
+        .navigation {
+            background-color: #455A64;
+            color: #964B00;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding: 10px;
+        }
+        .navigation li {
+            list-style: none;
+            margin-right: 20px;
+        }
+        .food {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+        .food img {
+            width: 25%;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .food h3 {
+            margin-top: 10px;
+        }
+        .food p {
+            margin-bottom: 20px;
+        }
+        .food .price {
+            font-size: 24px;
+            color: #c8327b;
+            margin-top: 20px;
+        }
+        .contact-form {
+            background-color: #F0EAD6;
+            padding: 10px;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form input[type="submit"] {
+            background-color: #c8327b;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Restaurant Website</h1>
+    </header>
+    <nav class="navigation">
+        <ul>
+            <li><a href="#appetizers">Appetizers</a></li>
+            <li><a href="#main-course">Main Course</a></li>
+            <li><a href="#desserts">Desserts</a></li>
+            <li><a href="#drinks">Drinks</a></li>
+        </ul>
+    </nav>
+    <section class="food" id="appetizers">
+        <h2>Appetizers</h2>
+        <div class="item">
+            <img src="image/img1.jpg" alt="">
+            <h3>Veggie Spring Rolls</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="price">$5.99</div>
+        </div>
+        <div class="item">
+            <img src="image/img2.jpg" alt="">
+            <h3>Char Siu Bao</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="price">$7.99</div>
+        </div>
+        <div class="item">
+            <img src="image/img3.jpg" alt="">
+            <h3>Egg Foo Young</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="price">$8.99</div>
+        </div>
+    </section>
+    <section class="food" id="main-course">
+        <h2>Main Course</h2>
+        <div class="item">
+            <img src="image/img4.jpg" alt="">
+            <h3>Beef Stir Fry</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="price">$12.99</div>
+        </div>
+        <div class="item">
+            <img src="image/img5.jpg" alt="">
+            <h3>Chicken Teriyaki</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="price">$14.99</div>
+        </div>
+        <div class="item">
+            <img src="image/img6.jpg" alt="">
+            <h3>Sweet and Sour Pork</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="price">$16.99</div>
+        </div>
+    </section>
+    <section class="food" id="desserts">
+        <h2>Desserts</h2>
+        <div class="item">
+            <img src="image/img7.jpg" alt="">
+            <h3>Mango Sticky Rice</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="price">$6.99</div>
+        </div>
+        <div class="item">
+            <img src="image/img8.jpg" alt="">
+            <h3>Coconut Ice Cream</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="price">$7.99</div>
+        </div>
+        <div class="item">
+            <img src="image/img9.jpg" alt="">
+            <h3>Chocolate Chip Cookies</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="price">$8.99</div>
+        </div>
+    </section>
+    <section class="food" id="drinks">
+        <h2>Drinks</h2>
+        <div class="item">
+            <img src="image/img10.jpg" alt="">
+            <h3>Ice Tea</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="price">$5.99</div>
+        </div>
+        <div class="item">
+            <img src="image/img11.jpg" alt="">
+            <h3>Orange Juice</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="price">$6.99</div>
+        </div>
+        <div class="item">
+            <img src="image/img12.jpg" alt="">
+            <h3>Fresh Lemonade</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="price">$7.99</div>
+        </div>
+    </section>
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email"><br><br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea><br><br>
+            <input type="submit" value="Send">
+        </form>
+    </section>
+</body>
+</html>
+```
+
+You can see that the structure of the website is divided into sections, each with its own header and content. The menu at the top of the page allows users to navigate between the different sections of the site. The contact section includes a form for users to submit their name and email address, as well as a brief message.
+
+The CSS file used in this tutorial is also quite simple:
+```css
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+h1 {
+  color: #333;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  color: #333;
+  text-decoration: none;
+}
+
+section {
+  margin: 40px 0;
+}
+
+.menu-link {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.contact {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+```
+You can see that the main section of the website is centered, and that each menu item has a font size of 18 pixels and a bold weight. The navigation bar has a list style of none, no margins or padding, and is displayed as a flex container with items aligned to the right. The contact form uses flexbox to center its contents vertically and horizontally.
+
+The HTML file for this tutorial is also quite simple, just a basic structure of sections with headings and content. You can see that each section has its own header and content. The navigation bar at the top includes links to each section of the website.
+
+In this tutorial, we've learned how to create a basic web page using HTML, CSS, and JavaScript. We've also learned about some common HTML tags, CSS properties, and JavaScript functions that you can use in your own projects.

@@ -1,82 +1,77 @@
+
+Here's the CSS code for the website:
+```css
+/* Global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    background-color: #F5F5DC;
-    color: #006400;
-    font-family: Arial;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
 }
 
-#main-header {
-    background-color: #006400;
-    color: #F5F5DC;
-    padding: 20px 0;
-    text-align: center;
+h1 {
+  font-size: 36px;
+  text-align: center;
+  color: #444;
+  margin: 40px 0;
 }
 
-#main-header h1 {
-    font-size: 2em;
+/* Menu styles */
+.menu {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#navbar {
-    background-color: #006400;
-    color: #F5F5DC;
-    padding: 10px 0;
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-#navbar a {
-    color: #F5F5DC;
-    text-decoration: none;
-    margin: 0 15px;
+.menu li {
+  margin: 10px 0;
 }
 
-#navbar a:hover {
-    color: #F5F5DC;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
+.menu a {
+  text-decoration: none;
+  color: #444;
 }
 
-#content h2, #content h3 {
-    font-size: 1.5em;
+.menu a:hover {
+  color: #c8327b;
 }
 
-.post h3 {
-    font-size: 1.2em;
+/* Food section styles */
+.food {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
 }
 
-#sidebar {
-    float: right;
-    width: 25%;
-    padding: 20px;
+.food img {
+  width: 25%;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#sidebar ul {
-    list-style: none;
-    padding: 0;
+.food h3 {
+  margin-top: 10px;
 }
 
-#sidebar ul a {
-    color: #006400;
+.food p {
+  margin-bottom: 20px;
 }
 
-#sidebar ul a:hover {
-    color: #006400;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
+.food .price {
+  font-size: 24px;
+  color: #c8327b;
+  margin-top: 20px;
 }
-
-footer {
-    background-color: #006400;
-    color: #F5F5DC;
-    text-align: center;
-    padding: 20px 0;
-}
-
-footer a {
-    color: #F5F5DC;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-footer a:hover {
-    color: #F5F5DC;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-}
+```

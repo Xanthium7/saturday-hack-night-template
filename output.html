@@ -1,52 +1,266 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Personal Blog</title>
-    <link rel="stylesheet" type="text/css" href="output.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header id="main-header" style="background-color:#006400; color:#F5F5DC;">
-        <h1 style="font-family:Arial; font-size:2em;">Welcome to My Blog</h1>
+    <header class="header">
+        <div class="container">
+            <img src="https://placehold.co/600x400" alt="Restaurant Header Image">
+            <h1>Delicious Dishes</h1>
+            <p>Experience the best of our restaurant here.</p>
+        </div>
     </header>
-    <nav id="navbar">
-        <ul id="nav-menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Me</a></li>
-            <li><a href="#">Contact</a></li>
+    <nav class="navigation">
+        <ul>
+            <li><a href="#appetizers">Appetizers</a></li>
+            <li><a href="#main-course">Main Course</a></li>
+            <li><a href="#desserts">Desserts</a></li>
+            <li><a href="#drinks">Drinks</a></li>
         </ul>
     </nav>
-    <main id="content" style="background-color:#F5F5DC; color:#006400;">
-        <section id="welcome-section">
-            <h2 style="font-family:Arial; font-size:1.5em;">Welcome Message</h2>
-            <p>Welcome to my personal blog. Here you can read my thoughts and experiences.</p>
-        </section>
-        <section id="recent-posts">
-            <h2 style="font-family:Arial; font-size:1.5em;">Recent Posts</h2>
-            <article class="post">
-                <h3 style="font-family:Arial; font-size:1.2em;">Post Title</h3>
-                <p>Post content...</p>
-            </article>
-            <article class="post">
-                <h3 style="font-family:Arial; font-size:1.2em;">Post Title</h3>
-                <p>Post content...</p>
-            </article>
-        </section>
-        <aside id="sidebar">
-            <h2 style="font-family:Arial; font-size:1.5em;">Categories</h2>
-            <ul>
-                <li><a href="#">Category 1</a></li>
-                <li><a href="#">Category 2</a></li>
-                <li><a href="#">Category 3</a></li>
-            </ul>
-        </aside>
-    </main>
-    <footer style="background-color:#006400; color:#F5F5DC;">
-        <ul id="social-links">
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Instagram</a></li>
+    <section id="appetizers" class="food-items">
+        <h2>Appetizers</h2>
+        <ul>
+            <li>
+                <img src="https://placehold.co/600x400" alt="Food Item Image">
+                <h3>Brandade Apples</h3>
+                <p>A sweet and savory appetizer made with braised apples.</p>
+                <span class="price">$12.99</span>
+            </li>
+            <li>
+                <img src="https://placehold.co/600x400" alt="Food Item Image">
+                <h3>Calamari Fritters</h3>
+                <p>Crispy fried shrimp appetizers served with a tangy dipping sauce.</p>
+                <span class="price">$14.99</span>
+            </li>
         </ul>
-    </footer>
-    <script src="output.js"></script>
+    </section>
+    <section id="main-course" class="food-items">
+        <h2>Main Course</h2>
+        <ul>
+            <li>
+                <img src="https://placehold.co/600x400" alt="Food Item Image">
+                <h3>Grilled Steak with Roasted Potatoes</h3>
+                <p>A juicy steak grilled to perfection and served with roasted potatoes.</p>
+                <span class="price">$29.99</span>
+            </li>
+            <li>
+                <img src="https://placehold.co/600x400" alt="Food Item Image">
+                <h3>Seared Scallops with Lemon Butter Sauce</h3>
+                <p>Fresh scallops seared to a crispy golden brown and served with a tangy lemon butter sauce.</p>
+                <span class="price">$24.99</span>
+            </li>
+        </ul>
+    </section>
+    <section id="desserts" class="food-items">
+        <h2>Desserts</h2>
+        <ul>
+            <li>
+                <img src="https://placehold.co/600x400" alt="Food Item Image">
+                <h3>Chocolate Lava Cake</h3>
+                <p>A rich chocolate lava cake served with a scoop of vanilla ice cream.</p>
+                <span class="price">$7.99</span>
+            </li>
+            <li>
+                <img src="https://placehold.co/600x400" alt="Food Item Image">
+                <h3>Tiramisu</h3>
+                <p>A classic Italian dessert made with ladyfingers, mascarpone cheese, and espresso.</p>
+                <span class="price">$6.99</span>
+            </li>
+        </ul>
+    </section>
+    <section id="drinks" class="food-items">
+        <h2>Drinks</h2>
+        <ul>
+            <li>
+                <img src="https://placehold.co/600x400" alt="Food Item Image">
+                <h3>Iced Tea with Lemon</h3>
+                <p>A refreshing iced tea served with a slice of lemon.</p>
+                <span class="price">$2.99</span>
+            </li>
+            <li>
+                <img src="https://placehold.co/600x400" alt="Food Item Image">
+                <h3>Coffee with Milk and Sugar</h3>
+                <p>A strong coffee made with espresso, milk, and sugar.</p>
+                <span class="price">$3.99</span>
+            </li>
+        </ul>
+    </section>
+    <form class="contact-form">
+        <h2>Contact Us</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea><br><br>
+        <input type="submit" value="Submit">
+    </form>
 </body>
 </html>
+```
+
+### CSS
+
+```css
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: 36px;
+  text-align: center;
+  color: #444;
+  margin: 40px 0;
+}
+
+.menu {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin: 10px 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #444;
+}
+
+.menu a:hover {
+  color: #c8327b;
+}
+
+.food {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.food img {
+  width: 25%;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.food h3 {
+  margin-top: 10px;
+}
+
+.food p {
+  margin-bottom: 20px;
+}
+
+.food .price {
+  font-size: 24px;
+  color: #c8327b;
+  margin-top: 20px;
+}
+
+form.contact-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form.contact-form h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+form.contact-form label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+form.contact-form input[type="text"],
+form.contact-form input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form.contact-form input[type="submit"] {
+  background-color: #c8327b;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form.contact-form input[type="submit"]:hover {
+  background-color: #9b436c;
+}
+```
+
+### JS
+
+```js
+const menu = document.querySelector('.menu');
+const menuItems = [...document.querySelectorAll('.menu li')];
+const food = document.querySelector('.food');
+const foodItems = [...document.querySelectorAll('.food .item')];
+
+// Add click event to menu items
+menuItems.forEach(item => {
+  item.addEventListener('click', () => {
+    // Remove active class from all menu items
+    menuItems.forEach(item => item.classList.remove('active'));
+    // Add active class to current item
+    item.classList.add('active');
+
+    // Update food section with corresponding data
+    const id = item.dataset.id;
+    foodItems.forEach(item => {
+      if (item.dataset.id === id) {
+        item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+  });
+});
+```
+
+This code creates a simple website with a menu and a section for displaying food items. When a user clicks on an item in the menu, it adds the `active` class to that item and removes it from all other items. It also updates the food section with the corresponding data by removing the `hidden` class from the corresponding food item and adding it to all other items.
+
+Note that this code uses some modern features such as destructuring and template literals, so make sure you're using a recent version of JavaScript. Also, this code assumes that your HTML is structured in a certain way, so adjust it accordingly if necessary.
