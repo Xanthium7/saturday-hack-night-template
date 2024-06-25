@@ -6,16 +6,12 @@
 
 # Speak to Site
 
-Transform your web development experience with our LangChain project! Seamlessly create stunning websites using JUst your voice Elevate your design potential with this powerful tool that blends simplicity with functionality, making your web creation process more enjoyable and efficient. Here u can audio gets transcribed to text which is used to generate stunning webistes which is modifiable and saved according to users need
+Transform your web development experience with our LangChain project! Seamlessly create stunning websites using just your voice. Speak to Site turns your website ideas into reality by simply describing what you want. This tool not only generates an interactive website based on your description but also allows you to alter and modify the website if you don't like the initial version. Elevate your design potential with this powerful tool that blends simplicity with functionality, making your web creation process more enjoyable and efficient
 
 
 ## Team Members
 1. [Akshhay KM](https://github.com/Xanthium7/saturday-hack-night-template)
 2. [Alan Francis Santhosh](https://github.com/alanfrancis442/saturday-hack-night-template)
-
-## Link to Product Walkthrough
-
-https://github.com/Xanthium7/saturday-hack-night-template/assets/119670162/a6117137-e95c-4741-87f9-299fc993f4be
 
 
 ## How It Works
@@ -43,6 +39,12 @@ Our project leverages LangChain and Streamlit to provide a seamless web developm
    - **Step 5**: Once the code is integrated, a link is generated.
    - **Step 6**: Users can click the link to preview the fully functional website created by the AI.
    <img src="https://github.com/Xanthium7/saturday-hack-night-template/assets/119670162/395214c1-cb6a-479c-a5c8-ad1d2362f64d" alt="Project Demo 3" width="500"/>
+
+## Link to Product Walkthrough
+
+
+https://github.com/Xanthium7/saturday-hack-night-template/assets/119670162/d2112307-473b-4274-a8fa-c16594dcd2e2
+
 
 ## Libraries Used
 Our project utilizes the following libraries to achieve its functionality:
