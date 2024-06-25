@@ -6,7 +6,7 @@
 
 # Speak to Site
 
-Transform your web development experience with our LangChain project! Seamlessly create stunning websites using HTML and CSS. Elevate your design potential with this powerful tool that blends simplicity with functionality, making your web creation process more enjoyable and efficient.
+Transform your web development experience with our LangChain project! Seamlessly create stunning websites using JUst your voice Elevate your design potential with this powerful tool that blends simplicity with functionality, making your web creation process more enjoyable and efficient. Here u can audio gets transcribed to text which is used to generate stunning webistes which is modifiable and saved according to users need
 
 
 ## Team Members
